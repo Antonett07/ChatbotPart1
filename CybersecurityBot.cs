@@ -22,8 +22,8 @@ namespace ChatbotPart1
             {"phishing", "📧 Phishing emails/links trick you into sharing info. Check sender 👀, hover links (don't click), look for HTTPS 🔒. Report suspicious emails to authorities 🚨."},
             {"safe browsing", "🌐 Keep software updated 📥, use antivirus (e.g., Windows Defender 🛡️), avoid public WiFi for banking, use VPN if needed. Download only from trusted sources ✅."},
             {"malware", "🦠 Malware like viruses steals data. Avoid shady downloads ⛔, scan files 🕵️, don't open unknown attachments. Run regular scans 🔍."},
-            {"social engineering", "🧠 Scammers manipulate you psychologically. Verify requests via known channels 📞, Never share OTPs or personal info over phone/email 🚫."},
-            {"thanks", "🙏 You're welcome, {UserName}! Stay cyber-safe! 🔒✨"},
+            {"social engineering", "🧠 Scammers manipulate you psychologically. Verify requests via known channels 📞, Never share OTPs or personal info over phone/email ."},
+            {"thanks", "🙏 You're welcome, {UserName}! Stay cyber-safe! 🔒"},
             {"bye", "👋 Goodbye, {UserName}! Stay vigilant online. 🛡️"},
             {"2fa", "🔐 2FA adds security layer (SMS/app/biometric). SA banks like Capitec/FNB mandate it. Enable everywhere! Beware SMS interception during load shedding ⚠️."},
             {"vpn", "🛡️ VPN encrypts traffic on public WiFi (e.g., malls, hotspots). Essential in SA with data theft risks. Free like ProtonVPN, paid for speed. Avoid for banking if slow."},
@@ -31,7 +31,7 @@ namespace ChatbotPart1
             {"load shedding", "⚡ During loadshedding, phishing spikes & backups fail. Use UPS for PC, cloud backups (Google Drive), verify emails 2x. Offline mode training helps."},
             {"banking", "🏦 SA banking scams: Fake SMS/calls 'verify account'. Never share OTP/PIN. Use app fingerprint, check HTTPS, report to bank fraud line immediately 🚨."},
             {"social media", "📱 Social media phishing common in SA (fake competitions). Privacy settings max, don't click 'win iPhone' links, verify profiles via call."},
-            {"updates", "📲 Auto-updates patch vulnerabilities (e.g., Log4j). Enable Windows Update, antivirus defs. SA CERT warns of exploits targeting old software."}
+            {"updates", " Auto-updates patch vulnerabilities (e.g., Log4j). Enable Windows Update, antivirus defs. SA CERT warns of exploits targeting old software."}
         };
 
         /// <summary>
