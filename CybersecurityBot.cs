@@ -46,7 +46,7 @@ namespace ChatbotPart1
             }
             if (input.Length > 500)
             {
-                return "📏 Message too long! Keep it under 500 chars for best responses. 😊";
+                return "📏 Message too long! Keep it under 500 chars for best responses. ";
             }
             input = input.Trim().ToLowerInvariant().Replace("[^a-z0-9\\s]", " "); // Basic sanitize special chars
 
