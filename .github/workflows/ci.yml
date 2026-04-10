@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build main project
+      run: dotnet build ChatbotPart1.csproj --no-restore --configuration Release -warnaserror
+      
+    - name: Run tests
+      run: dotnet test ChatbotPart1.Tests/ChatbotPart1.Tests.csproj --no-build --verbosity normal --collect:"XPlat Code Coverage"
+      
+    - name: Verify no changes
+      run: git diff --exit-code
