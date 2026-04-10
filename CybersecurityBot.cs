@@ -16,8 +16,8 @@ namespace ChatbotPart1
         public Dictionary<string, string> Responses { get; } = new(StringComparer.OrdinalIgnoreCase)
         {
             {"how are you", "🤖 I'm doing great, {UserName}! Ready to help you stay safe online. 😊"},
-            {"what's your purpose", "🎯 I'm the Cybersecurity Awareness Assistant! I educate South African citizens on phishing, passwords, safe browsing, and more to fight rising cyber threats. 🇿🇦"},
-            {"what can i ask", "📋 Ask me about: passwords 🔑, phishing 📧, safe browsing 🌐, malware 🦠, social engineering 🧠, or say 'exit' to quit. 🚪"},
+            {"what's your purpose", " I'm the Cybersecurity Awareness Assistant! I educate South African citizens on phishing, passwords, safe browsing, and more to fight rising cyber threats. 🇿🇦"},
+            {"what can i ask", " Ask me about: passwords 🔑, phishing 📧, safe browsing 🌐, malware 🦠, social engineering 🧠, or say 'exit' to quit. 🚪"},
             {"password", "🔑 Use strong, unique passwords (12+ chars, mix upper/lower/numbers/symbols). Enable 2FA ✅. Use a password manager like Bitwarden. Never reuse passwords!"},
             {"phishing", "📧 Phishing emails/links trick you into sharing info. Check sender 👀, hover links (don't click), look for HTTPS 🔒. Report suspicious emails to authorities 🚨."},
             {"safe browsing", "🌐 Keep software updated 📥, use antivirus (e.g., Windows Defender 🛡️), avoid public WiFi for banking, use VPN if needed. Download only from trusted sources ✅."},
