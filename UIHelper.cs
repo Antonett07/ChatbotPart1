@@ -38,7 +38,7 @@ namespace ChatbotPart1
             }
             catch (FileNotFoundException)
             {
-                ColorWriteLine("💻 Voice greeting ready! (Place 'welcome.wav' in bin/Debug/net8.0-windows for audio)", AppColor.Info);
+                ColorWriteLine("Voice greeting ready! (Place 'welcome.wav' in bin/Debug/net8.0-windows for audio)", AppColor.Info);
                 Thread.Sleep(1500); 
             }
             catch (Exception ex)
@@ -91,11 +91,11 @@ namespace ChatbotPart1
         // Method to display the main menu of available topics
         public static void ShowMenu()
         {
-            ColorWriteLine("\n📋 Available Topics:", AppColor.Info);
-            ColorWriteLine("🔑 Passwords | 📧 Phishing | 🌐 Safe Browsing", AppColor.Welcome);
-            ColorWriteLine("🦠 Malware | 🧠 Social Engineering | 🔐 2FA", AppColor.Welcome);
-            ColorWriteLine("🛡️ VPN | 💥 Ransomware | ⚡ Load Shedding | 🏦 Banking", AppColor.Welcome);
-            ColorWriteLine("📱 Social Media | 📲 Updates | 'what can i ask' for more", AppColor.Info);
+            ColorWriteLine("\n Available Topics:", AppColor.Info);
+            ColorWriteLine(" Passwords |  Phishing |  Safe Browsing", AppColor.Welcome);
+            ColorWriteLine(" Malware |  Social Engineering |  2FA", AppColor.Welcome);
+            ColorWriteLine(" VPN |  Ransomware |  Load Shedding |  Banking", AppColor.Welcome);
+            ColorWriteLine(" Social Media |  Updates | 'what can i ask' for more", AppColor.Info);
             DrawBorder(50, '─');
         }
 
