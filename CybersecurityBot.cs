@@ -20,7 +20,7 @@ namespace ChatbotPart1
             {"what can i ask", " Ask me about: passwords , phishing , safe browsing , malware , social engineering , or say 'exit' to quit. "},
             {"password", " Use strong, unique passwords (12+ chars, mix upper/lower/numbers/symbols). Enable 2FA . Use a password manager like Bitwarden. Never reuse passwords!"},
             {"phishing", " Phishing emails/links trick you into sharing info. Check sender , hover links (don't click), look for HTTPS . Report suspicious emails to authorities ."},
-            {"safe browsing", " Keep software updated 📥, use antivirus (e.g., Windows Defender ), avoid public WiFi for banking, use VPN if needed. Download only from trusted sources ."},
+            {"safe browsing", " Keep software updated , use antivirus (e.g., Windows Defender ), avoid public WiFi for banking, use VPN if needed. Download only from trusted sources ."},
             {"malware", " Malware like viruses steals data. Avoid shady downloads , scan files , don't open unknown attachments. Run regular scans ."},
             {"social engineering", " Scammers manipulate you psychologically. Verify requests via known channels , Never share OTPs or personal info over phone/email ."},
             {"thanks", " You're welcome, {UserName}! Stay cyber-safe! "},
