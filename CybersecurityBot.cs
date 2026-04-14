@@ -29,7 +29,7 @@ namespace ChatbotPart1
             {"vpn", "🛡️ VPN encrypts traffic on public WiFi (e.g., malls, hotspots). Essential in SA with data theft risks. Free like ProtonVPN, paid for speed. Avoid for banking if slow."},
             {"ransomware", "💥 Ransomware (LockBit hit SA gov/orgs) encrypts files for ransom. Don't pay! Backup 3-2-1 rule (3 copies, 2 media, 1 offsite). Update Windows/OS."},
             {"load shedding", "⚡ During loadshedding, phishing spikes & backups fail. Use UPS for PC, cloud backups (Google Drive), verify emails 2x. Offline mode training helps."},
-            {"banking", "🏦 SA banking scams: Fake SMS/calls 'verify account'. Never share OTP/PIN. Use app fingerprint, check HTTPS, report to bank fraud line immediately 🚨."},
+            {"banking", "🏦 SA banking scams: Fake SMS/calls 'verify account'. Never share OTP/PIN. Use app fingerprint, check HTTPS, report to bank fraud line immediately ."},
             {"social media", "📱 Social media phishing common in SA (fake competitions). Privacy settings max, don't click 'win iPhone' links, verify profiles via call."},
             {"updates", " Auto-updates patch vulnerabilities (e.g., Log4j). Enable Windows Update, antivirus defs. SA CERT warns of exploits targeting old software."}
         };
