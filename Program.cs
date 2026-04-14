@@ -2,24 +2,21 @@ using System;
 
 namespace ChatbotPart1
 {
-    /// <summary>
-    /// Full implementation - PROG6221 POE Part 1: Voice, ASCII, interaction, responses, UI (10+15+10+15+10+15 marks)
-    /// Classes used: UIHelper, CybersecurityBot. Run: dotnet run (place welcome.wav)
-    /// Emojis for visual indicators as requested. Enhanced with borders, SA responses.
-    /// </summary>
+    
     internal class Program
     {
+        // Entry point of the application
         static void Main(string[] args)
         {
-            // Fix emoji display: Set UTF-8 encoding for Windows Console
+          
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.InputEncoding = System.Text.Encoding.UTF8;
 
-            // Intro: Voice + Logo (10 marks)
+            
             UIHelper.PlayWelcomeSound();
             UIHelper.DisplayLogo();
 
-            // Greet & personalize (10 marks)
+            
             UIHelper.ColorWriteLine("🤖 Hello! What is your name?", UIHelper.AppColor.Welcome);
             string? nameInput;
             do
@@ -32,13 +29,13 @@ namespace ChatbotPart1
                 }
                 UIHelper.ColorWriteLine("❌ Please enter your name to start chatting!", UIHelper.AppColor.Error);
             } while (true);
-
+            // Create bot instance with user's name
             var bot = new CybersecurityBot { UserName = nameInput!.Trim() };
-            // Text greeting after ASCII/audio/name (rubric)
+            
             UIHelper.TypingEffect($"🌟 Welcome, {bot.UserName}! Lets Engage more to help you to be aware about Cyber Security Attacks - now with SA topics like load shedding & banking scams! Type 'menu' for topics, 'exit' to quit. 🔒", UIHelper.AppColor.Welcome);
             UIHelper.ShowMenu();
 
-            // Main loop with borders (enhanced UI)
+            // Main chat loop
             UIHelper.DrawBorder(60, '─');
             string? input;
             while (true)

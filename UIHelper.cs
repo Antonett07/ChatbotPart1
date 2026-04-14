@@ -4,9 +4,7 @@ using System.Threading;
 
 namespace ChatbotPart1
 {
-    /// <summary>
-    /// Static UI Helper class for enhanced console interface - colors, effects, media (PROG6221 POE Part 1)
-    /// </summary>
+    // Helper class for UI elements and interactions
     public static class UIHelper
     {
         public enum AppColor
@@ -18,9 +16,7 @@ namespace ChatbotPart1
             Info = ConsoleColor.Gray
         }
 
-        /// <summary>
-        /// Cyber-themed ASCII art logo for Cybersecurity Awareness Bot
-        /// </summary>
+        // ASCII art logo for the chatbot
         public const string Logo = @"
     ╔════════════════════════════════════════════════════╗
     ║                                                    ║
@@ -36,31 +32,27 @@ namespace ChatbotPart1
     ╚════════════════════════════════════════════════════╝
 ";
 
-        /// <summary>
-        /// Play welcome voice greeting (expects welcome.wav in app dir)
-        /// </summary>
+        // Method to play a welcome sound when the application starts
         public static void PlayWelcomeSound()
         {
             try
             {
                 using var player = new SoundPlayer("welcome.wav");
-                player.PlaySync(); // Blocking play for intro effect
+                player.PlaySync(); 
             }
             catch (FileNotFoundException)
             {
                 ColorWriteLine("💻 Voice greeting ready! (Place 'welcome.wav' in bin/Debug/net8.0-windows for audio)", AppColor.Info);
-                Thread.Sleep(1500); // Simulate audio duration
+                Thread.Sleep(1500); 
             }
             catch (Exception ex)
             {
                 UIHelper.ColorWriteLine($"Audio init error: {ex.Message}", UIHelper.AppColor.Error);
-                Thread.Sleep(1500); // Simulate audio duration
+                Thread.Sleep(1500); 
             }
         }
 
-        /// <summary>
-        /// Write line with color, auto-reset
-        /// </summary>
+        // Method to write colored text to the console
         public static void ColorWriteLine(string text, AppColor color)
         {
             var oldColor = Console.ForegroundColor;
@@ -69,9 +61,7 @@ namespace ChatbotPart1
             Console.ForegroundColor = oldColor;
         }
 
-        /// <summary>
-        /// Typing effect simulation for conversational feel
-        /// </summary>
+        // Method to display text with a typing effect
         public static void TypingEffect(string text, AppColor color = AppColor.Bot, int delayMs = 50)
         {
             var oldColor = Console.ForegroundColor;
@@ -85,30 +75,24 @@ namespace ChatbotPart1
             Console.ForegroundColor = oldColor;
         }
 
-        /// <summary>
-        /// Draw horizontal/vertical border for sections
-        /// </summary>
+        // Method to draw a horizontal border in the console
         public static void DrawBorder(int width = 60, char symbol = '═')
         {
             Console.WriteLine(new string(symbol, width));
         }
 
-        /// <summary>
-        /// Animated border effect for enhanced UX (polish)
-        /// </summary>
+        // Method to animate a border by printing it multiple times with a delay
         public static void AnimateBorder(int width = 60, char symbol = '═', int speedMs = 100)
         {
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(new string(' ', Console.WindowWidth)); // Clear line
+                Console.WriteLine(new string(' ', Console.WindowWidth)); 
                 ColorWriteLine(new string(symbol, width), AppColor.Info);
                 Thread.Sleep(speedMs);
             }
         }
 
-        /// <summary>
-        /// Display main menu of topics
-        /// </summary>
+        // Method to display the main menu of available topics
         public static void ShowMenu()
         {
             ColorWriteLine("\n📋 Available Topics:", AppColor.Info);
@@ -119,9 +103,7 @@ namespace ChatbotPart1
             DrawBorder(50, '─');
         }
 
-        /// <summary>
-        /// Display full logo with borders
-        /// </summary>
+        // Method to display the logo with an animated border and then show the menu
         public static void DisplayLogo()
         {
             AnimateBorder();

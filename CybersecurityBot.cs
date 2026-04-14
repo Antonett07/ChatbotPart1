@@ -3,16 +3,13 @@ using System.Collections.Generic;
 
 namespace ChatbotPart1
 {
-    /// <summary>
-    /// Main chatbot logic class with auto-properties, responses, validation (PROG6221 POE Part 1 - 15 marks responses, 5 validation, 15 structure)
-    /// </summary>
+    // A simple rule-based chatbot for cybersecurity awareness with South African context
     public class CybersecurityBot
     {
+        // User's name for personalized responses
         public string? UserName { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Predefined responses covering spec topics + basics (8+ for high marks), emojis for visual feedback
-        /// </summary>
+        // Predefined responses for various cybersecurity topics, with some SA-specific content
         public Dictionary<string, string> Responses { get; } = new(StringComparer.OrdinalIgnoreCase)
         {
             {"how are you", " I'm doing great, {UserName}! Ready to help you stay safe online. "},
@@ -34,12 +31,10 @@ namespace ChatbotPart1
             {"updates", " Auto-updates patch vulnerabilities (e.g., Log4j). Enable Windows Update, antivirus defs. SA CERT warns of exploits targeting old software."}
         };
 
-        /// <summary>
-        /// Get response: Exact match > keyword > default validation
-        /// </summary>
+        // Method to get a response based on user input
         public string GetResponse(string input)
         {
-            // Sanitize input (exceed validation)
+            // Basic input validation and normalization
             if (string.IsNullOrWhiteSpace(input))
             {
                 return "❓ I didn’t quite understand that. Could you rephrase? (Try 'password' or 'phishing')";
@@ -48,15 +43,15 @@ namespace ChatbotPart1
             {
                 return "Message too long! Keep it under 500 chars for best responses. ";
             }
-            input = input.Trim().ToLowerInvariant().Replace("[^a-z0-9\\s]", " "); // Basic sanitize special chars
+            input = input.Trim().ToLowerInvariant().Replace("[^a-z0-9\\s]", " "); 
 
-            // Exact match
+            
             if (Responses.TryGetValue(input, out string? response))
             {
                 return response?.Replace("{UserName}", UserName ?? "friend") ?? "Response error.";
             }
 
-            // Keyword fallback (partial match)
+            
             foreach (var kvp in Responses)
             {
                 if (kvp.Key.Contains(input) || input.Contains(kvp.Key))
@@ -65,7 +60,7 @@ namespace ChatbotPart1
                 }
             }
 
-            // Regex fuzzy match for better UX (exceeds)
+            // Use regex to find keywords in the input for a more flexible response
             var regex = new System.Text.RegularExpressions.Regex(@"\\b(2fa|vpn|ransom|load|bank|social|update|phish|malware|password)\\b", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
             var match = regex.Match(input);
             if (match.Success)
@@ -77,13 +72,11 @@ namespace ChatbotPart1
                 }
             }
 
-            // Graceful validation/default
+            
             return $" Interesting, {UserName ?? "friend"}! Ask about 'passwords', 'phishing', '2fa', 'vpn', 'ransomware' (SA threats), 'load shedding', or 'what can i ask'. Type 'exit' to quit. 🔒";
         }
 
-        /// <summary>
-        /// Validate if input is exit command
-        /// </summary>
+        // Simple exit condition based on user input
         public bool ShouldExit(string input) => input.Trim().ToLowerInvariant() switch
         {
             "exit" or "bye" or "quit" => true,
